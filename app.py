@@ -1,11 +1,21 @@
 import random
 x = random.randint(1,10)
 print("Guess a number 1-10")
-guess = int(input("Enter a number"))
+guess_history = []
 while True:
-    if guess != x:
-        print("Guess again")
-    else:
-        break
+    guess = int(input("Enter a number"))
+    if guess > x:
+        print("Too high")
+        guess_history.append(guess)
+        print(guess_history)
+    elif guess < x:
+        print("too low")
+        guess_history.append(guess)
+        print(guess_history)
+    elif guess == x:
+        guess_history.append(guess)
+        print(f"You got it! The number was {x}. You guessed {guess_history}")
+        
+        
 
 
